@@ -1,0 +1,6 @@
+vscode/
+node_modules/
+logs/
+npm-debug.*
+connection.js
+./connection.js

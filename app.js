@@ -3,6 +3,9 @@ const app = express()
 const defaultRouter = require('./routes/defaultRouter')
 const bodyParser = require('body-parser')
 
+var connection = require('./connection');
+connection.connect();
+
 var cors = require('cors')
 app.use(cors())
 

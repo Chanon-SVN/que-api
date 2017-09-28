@@ -1,9 +1,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var connection = require('../connection');
-connection.connect();
-
 var queSchema = new Schema({
   name:String,
   topic:String,
@@ -17,6 +14,11 @@ queSchema.methods.getQue = async function(){
 
 queSchema.methods.createQue = async function(que) {
   return await que.save();
+}
+
+queSchema.methods.deleteQue = async function(filter) {
+
+  return await this.model('Que').findByIdAndRemove(filter)
 }
 
 module.exports = mongoose.model('Que', queSchema);

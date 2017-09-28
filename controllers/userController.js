@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const User = mongoose.model('User');
 
 exports.login= async function (username, password) {
+  console.log("UserController : ", username, password);
   let user = new User();
 
   let result = await user.login(username,password);
